@@ -24,6 +24,7 @@ class MySeedlinkClient(EasySeedLinkClient):
         self.selected_streams = []
         # get from server available streams
         self.stream_xml = self.get_info('STREAMS')
+        logger.info("stream_xml " + self.stream_xml)
         # streams wanted by user
         for patterns in streams:
             if self.select_stream_re(patterns) is False:
@@ -44,10 +45,10 @@ class MySeedlinkClient(EasySeedLinkClient):
         # self.conn.DFT_READBUF_SIZE = 10240
 
         # Time in seconds after which a `collect()` call will be interrupted.
-        # self.conn.timeout = 10
+        self.conn.timeout = 360
 
         # Network timeout (seconds) (default is 120 sec)
-        # self.conn.netto = 90
+        self.conn.netto = 360
 
         # Network reconnect delay (seconds)  (default is 30 sec)
         # self.conn.netdly = 30

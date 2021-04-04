@@ -1,0 +1,20 @@
+client = InfluxDBClient('localhost', 8086, 'admin', 'adminadmin', 'example')
+
+http://webservices.ingv.it/fdsnws/dataselect/1/query?starttime=2021-04-04T00%3A00%3A00&endtime=2021-04-04T23%3A59%3A59&minmag=2&maxmag=10&mindepth=-10&maxdepth=1000&minlat=-90&maxlat=90&minlon=-180&maxlon=180&minversion=100&orderby=time-asc&limit=999
+
+
+http://webservices.ingv.it/fdsnws/dataselect/1/query?starttime=2021-04-04T00%3A00%3A00&endtime=2021-04-04T23%3A59%3A59&network=IV&station=
+
+61	13.468240	192.168.178.31	93.63.207.206	HTTP	275	GET /fdsnws/station/1/application.wadl HTTP/1.1 
+
+http://webservices.ingv.it/fdsnws/dataselect/1/application.wadl
+
+http://webservices.ingv.it/fdsnws/station/1/application.wadl
+
+http://webservices.ingv.it/fdsnws/station/1/query?endtime=2021-04-04T14%3A51%3A59.992347&channel=%2A&station=%2A&location=%2A&starttime=2021-04-04T14%3A51%3A59.992310&network=%2A&level=channel 
+
+92	13.561711	192.168.178.31	93.63.207.206	HTTP	407	GET /fdsnws/station/1/query?endtime=2021-04-04T14%3A51%3A59.992347&channel=%2A&station=%2A&location=%2A&starttime=2021-04-04T14%3A51%3A59.992310&network=%2A&level=channel 
+
+
+
+network=IV&station=ACER

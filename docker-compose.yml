@@ -3,7 +3,8 @@ version: '3.4'
 services:
 
   influxdb:
-    image: influxdb
+    image: influxdb:1.7.10
+    container_name: influxdb
     ports:
       - 8086:8086
     environment:
@@ -34,6 +35,7 @@ services:
       - EXTRA='--drop-db'
 
   sl2generic:
+    container_name: sl2generic
     build:
       context: .
       dockerfile: Dockerfile
@@ -44,12 +46,15 @@ services:
       - INFLUXDB_PORT_8086_TCP_PORT=8086
       - SEEDLINK_SERVER=renass-fw.u-strasbg.fr
       - FDSN_WS_STATION_SERVER=http://renass-sc1.u-strasbg.fr:8080
-      # do not put space into SEEDLINK_STREAMS string !
       - SEEDLINK_STREAMS=[('1T','.*','HHZ','.*'),('QM','.*','HHZ','.*'),('MT','.*','(HHZ|DHZ)','.*'),('FR','.*','(HHZ|EHZ|ELZ)','.*'),('AM','.*','(SHZ|EHZ)','.*'),('ND','.*','HHZ','.*'),('CL','.*','HHZ','.*'),('FR','.*','SHZ',''),('RA','.*','HNZ','00'),('RD','.*','BHZ','.*'),('G','.*','BHZ','.*'),('XX','.*','BHZ','.*'),('(SZ|RT|IG|RG)','.*','.*Z','.*')]
+      # - SEEDLINK_SERVER=http://webservices.ingv.it
+      # - FDSN_WS_STATION_SERVER=http://webservices.ingv.it
+      # - SEEDLINK_STREAMS=[('*','.*','.*','.*')]
+      #- SEEDLINK_STREAMS=[('AM','.*','.*','.*')]
       - DB_NAME=eost
       - KEEP=1
       - RECOVER="yes"
-      # - EXTRA='--drop-db'
+      #- EXTRA='--drop-db'
 
 #---------------------------
 
