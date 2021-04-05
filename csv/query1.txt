@@ -1,2 +1,2 @@
-#EventID|Time|Latitude|Longitude|Depth/Km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName
-26376041|2021-04-04T00:06:54.660000|41.031|14.5867|9.7|SURVEY-INGV||||ML|1.4|--|1 km SE Paolisi (BN)
+#EventID
+26376041
