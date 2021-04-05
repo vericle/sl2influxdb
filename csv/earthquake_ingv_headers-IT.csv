@@ -1,4 +1,4 @@
-#datatype,long,dateTime:RFC3339,double,double,double,string,string,string,long,string,double,string,string
-#group,false,false,false,false,false,false,false,false,false,false,false,false,false
-#default,,,,,,,,,,,,,
+#datatype,long
+#group,false
+#default,
 sep=|
